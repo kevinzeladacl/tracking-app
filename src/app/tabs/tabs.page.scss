@@ -1,0 +1,56 @@
+// ion-fab {
+//     bottom: calc(10px + env(safe-area-inset-bottom));
+
+//     ion-fab-button {
+//         --background: #3880ff;
+//         --color: white;
+//         --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+//     }
+// }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    color: #000;
+}
+
+ion-tab-bar {
+    --background: #ffffff;
+    --color-focused: #ffffff;
+
+    --color-selected: #7366EE;
+
+    --color: #989898;
+    // border-radius: 20px 20px 0px 0px;
+    height: 70px;
+
+}
+
+.logo-toolbar {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 6px;
+    height: 30px;
+    width: 100px;
+}
+
+
+
+
+ion-icon {
+    // color: #ffffff;
+    /* Color dorado para las estrellas */
+    font-size: 24px;
+    /* Tamaño de las estrellas */
+    margin-right: 2px;
+    /* Separación entre las estrellas */
+}
+
+
+ion-badge {
+    font-size: 1rem;
+}

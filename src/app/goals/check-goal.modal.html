@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Marcar meta como realizada</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">Fecha</ion-label>
+    <ion-datetime display-format="YYYY-MM-DD HH:mm" [(ngModel)]="fecha"></ion-datetime>
+  </ion-item>
+  <ion-button expand="block" (click)="checkGoal()">
+    Marcar como realizada
+  </ion-button>
+</ion-content>

@@ -1,0 +1,24 @@
+<!-- Sección de Tabs (barra de navegación en la parte inferior) -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <!-- Tab para 'Inicio' -->
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Metas</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="notification">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-label>Notification</ion-label>
+      <ion-badge color="danger">{{notificationUnRead}}</ion-badge>
+    </ion-tab-button>
+
+
+    <!-- Tab de configuración / opciones extras -->
+    <ion-tab-button tab="more">
+      <ion-icon name="menu"></ion-icon>
+      <ion-label>Menú</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

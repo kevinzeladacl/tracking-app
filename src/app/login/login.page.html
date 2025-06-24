@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <ion-grid class="gradient-background">
+    <ion-row>
+      <ion-col size="12" class="logo-section">
+        <!-- logo -->
+        <ion-img src="assets/login.png" class="logo-center"></ion-img>
+        <!-- <ion-title class="title">TOP DRINKS APP</ion-title>
+        <p class="slogan">Un mundo de licores</p>
+        <p class="text-login">TODO LO QUE BUSCAS PARA TU NEGOCIO DE BEBESTIBLES EN UN SOLO LUGAR</p> -->
+      </ion-col>
+    </ion-row>
+    <ion-row class="all-center-content">
+      <ion-col size="12">
+        <ion-card color="dark">
+          <ion-card-content>
+            <ion-item>
+              <ion-label position="floating">Usuario</ion-label>
+              <ion-input type="text" [(ngModel)]="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input type="password" [(ngModel)]="password"></ion-input>
+            </ion-item>
+            <ion-button size="large" expand="block" class="button-login" (click)="login()">Ingresar</ion-button>
+          </ion-card-content>
+        </ion-card>
+        <hr class="divide-short">
+        <ion-button expand="block" color="primary" (click)="goToRegister()">
+          ¿No tienes cuenta? Regístrate Aquí.
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <p class="version-info">0.0.1 </p>
+</ion-footer>

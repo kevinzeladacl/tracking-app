@@ -1,0 +1,122 @@
+.modern-goal-card {
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(60,60,60,0.07), 0 1.5px 5px 0 rgba(0,0,0,0.03);
+  border-radius: 10px !important;
+  margin-bottom: 24px;
+  overflow: hidden;
+  border: 1px solid #ededed;
+}
+
+.modern-goal-header {
+  display: flex;
+  align-items: center;
+  padding: 16px 16px 10px 16px;
+  border-bottom: 1px solid #ededed;
+  border-radius: 10px 10px 0 0 !important;
+  min-height: 56px;
+  background: #fff !important;
+}
+
+.modern-goal-avatar {
+  margin-right: 12px;
+  background: #f3f4f8;
+}
+
+.modern-goal-flag {
+  font-size: 2.2rem;
+  color: #7a7a7a;
+}
+
+.modern-goal-title {
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.modern-goal-badge {
+  margin-left: auto;
+  background: #e8e8e8;
+  color: #555;
+}
+
+ion-badge, ion-chip, ion-avatar, ion-button {
+  border-radius: 10px !important;
+}
+
+ion-card, ion-card-content, ion-card-header {
+  border-radius: 10px !important;
+}
+
+ion-button[color=medium] {
+  --border-color: #d1d1d1;
+  --color: #555;
+  --background: #fff;
+}
+
+ion-button[color=success] {
+  --border-color: #b6e4c7;
+  --color: #2a7c4a;
+  --background: #fff;
+}
+
+.simple-goal-item {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  box-shadow: 0 1.5px 6px 0 rgba(60,60,60,0.05);
+  padding-left: 10px;
+  padding-right: 4px;
+  min-height: 52px;
+}
+
+@media (max-width: 600px) {
+  .modern-goal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.modern-goal-icon {
+  color: #888;
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.modern-goal-date {
+  font-weight: 500;
+  color: #444;
+}
+
+.modern-goal-desc {
+  font-weight: 500;
+  color: #444;
+}
+
+.modern-goal-light-badge {
+  background: #f3f4f8;
+  color: #444;
+}
+
+.modern-goal-chip {
+  background: #f3f4f8 !important;
+  color: #444 !important;
+}
+
+.modern-goal-chip-alt {
+  background: #e8e8e8 !important;
+  color: #444 !important;
+}
+
+.modern-goal-chip-empty {
+  background: #f8f8f8 !important;
+  color: #888 !important;
+}
+
+.modern-goal-chip-icon {
+  color: #a0a0a0;
+}
+
+.modern-goal-chip-empty-icon {
+  color: #bbb;
+}

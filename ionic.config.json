@@ -1,0 +1,7 @@
+{
+  "name": "Tracking",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

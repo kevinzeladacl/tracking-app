@@ -1,0 +1,58 @@
+// border radius ion-card 
+ion-card {
+    box-shadow: none;
+    color: #111;
+    font-family: "IBM Plex Sans";
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+ion-label {
+    font-family: "IBM Plex Sans" !important;
+    font-weight: 400;
+}
+
+ion-title {
+    margin-top: 5px;
+    font-size: medium;
+    font-family: "IBM Plex Sans";
+    font-optical-sizing: auto;
+    font-weight: bold;
+}
+ion-toolbar {
+    height: 68px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: lighter;
+    border-bottom: 2px solid rgb(177, 2, 180);
+}
+.toolbar-background {
+    background: linear-gradient(360deg, rgba(111, 7, 169, 1) 0%, rgba(168, 51, 136, 1) 100%);
+}
+
+ion-card-title {
+
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.text-register-step-1 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #000;
+
+}
+
+.button-register {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.input-wrapper.sc-ion-input-md input.sc-ion-input-md {
+    -webkit-transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: large;
+}

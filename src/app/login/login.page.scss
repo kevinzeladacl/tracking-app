@@ -1,0 +1,106 @@
+.logo-section {
+    margin-top: 20%;
+}
+
+
+.all-center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
+
+// .gradient-background {
+//     background: linear-gradient(53deg,#9d2093,#6324f9,#0de333);
+//     background-size: 180% 180%;
+//     animation: gradient-animation 6s ease infinite;
+//   }
+
+//   @keyframes gradient-animation {
+//     0% {
+//       background-position: 0% 50%;
+//     }
+//     50% {
+//       background-position: 100% 50%;
+//     }
+//     100% {
+//       background-position: 0% 50%;
+//     }
+//   }
+
+.logo-center {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 75%;
+    margin-top: 5%;
+    margin-bottom: -10%;
+
+}
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: -25px;
+    color: white;
+}
+
+
+.slogan {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.text-login {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.button-login {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+.divide-short {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 10%;
+    height: 2px;
+    background-color: #fff;
+}
+
+.version-info {
+    // small text right
+    text-align: center;
+    font-size: 10px;
+    margin-top: 10px;
+
+}
+
+ion-card[_ngcontent-ng-c64790393] {
+    border-radius: 10px;
+    background: #542ae0;
+}
+
+ion-item {
+    color: #542ae0;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+// border radius ion-card 
+ion-card {
+    border-radius: 10px;
+    background: transparent;
+}

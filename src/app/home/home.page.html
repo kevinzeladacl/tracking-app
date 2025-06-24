@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center;">Tracking APP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Botón flotante para crear nueva meta -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openCreateGoal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color="medium" (click)="toggleViewMode()" style="margin-top:10px;">
+      <ion-icon [name]="viewMode === 'detalle' ? 'list-outline' : 'apps-outline'"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Vista detalle -->
+  <ng-container *ngIf="viewMode === 'detalle'">
+    <ion-card *ngFor="let goal of goals" class="modern-goal-card">
+      <!-- ... (contenido actual de la card) ... -->
+      <ion-card-header class="modern-goal-header">
+        <ion-avatar slot="start" class="modern-goal-avatar">
+          <ion-icon name="flag-outline" class="modern-goal-flag"></ion-icon>
+        </ion-avatar>
+        <ion-card-title class="modern-goal-title">{{ goal.nombre }}</ion-card-title>
+        <ion-badge color="medium" class="modern-goal-badge">{{ goal.duracion ? goal.duracion + ' días' : 'Indefinida' }}</ion-badge>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row class="ion-align-items-center ion-margin-bottom">
+          <ion-col size="12" size-md="4">
+            <ion-label color="medium"><ion-icon name="calendar-outline" class="modern-goal-icon"></ion-icon> Inicio:</ion-label>
+            <span class="modern-goal-date">{{ goal.inicio | date:'yyyy-MM-dd' }}</span>
+          </ion-col>
+          <ion-col size="12" size-md="4">
+            <ion-label color="medium"><ion-icon name="repeat-outline" class="modern-goal-icon"></ion-icon> Racha actual:</ion-label>
+            <ion-badge color="light" class="modern-goal-light-badge">{{ getGoalStreak(goal.id) }} días</ion-badge>
+          </ion-col>
+          <ion-col size="12" size-md="4">
+            <ion-label color="medium"><ion-icon name="checkmark-done-outline" class="modern-goal-icon"></ion-icon> Total días:</ion-label>
+            <ion-badge color="light" class="modern-goal-light-badge">{{ getGoalTotalDays(goal.id) }}</ion-badge>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+          <ion-col size="12">
+            <ion-label color="medium"><ion-icon name="document-text-outline" class="modern-goal-icon"></ion-icon> Descripción:</ion-label>
+            <div class="modern-goal-desc">{{ goal.descripcion }}</div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-align-items-center ion-margin-bottom">
+          <ion-col size="12">
+            <ion-chip color="light" class="modern-goal-chip" *ngIf="getGoalCheckCount(goal.id) > 0">
+              <ion-icon name="time-outline" class="modern-goal-chip-icon"></ion-icon>
+              <ion-label>
+                Última vez: {{ getLastCheckinDate(goal.id) | date:'yyyy-MM-dd HH:mm' }}
+              </ion-label>
+            </ion-chip>
+            <ion-chip color="light" class="modern-goal-chip-alt" *ngIf="getGoalCheckCount(goal.id) > 0">
+              <ion-icon name="checkmark-circle-outline" class="modern-goal-chip-icon"></ion-icon>
+              <ion-label>
+                Días cumplidos: {{ getGoalCheckCount(goal.id) }}
+              </ion-label>
+            </ion-chip>
+            <ion-chip color="medium" class="modern-goal-chip-empty" *ngIf="getGoalCheckCount(goal.id) === 0">
+              <ion-icon name="close-circle-outline" class="modern-goal-chip-empty-icon"></ion-icon>
+              <ion-label>No registrada aún</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-justify-content-center" style="margin-top:12px;">
+          <ion-col size="auto">
+            <ion-button shape="round" fill="outline" size="small" color="medium" (click)="$event.stopPropagation(); openUpdateGoal(goal)">
+              <ion-icon slot="start" name="create-outline"></ion-icon>
+              Editar
+            </ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button shape="round" fill="outline" size="small" color="success" (click)="$event.stopPropagation(); openCheckGoal(goal)">
+              <ion-icon slot="start" name="checkmark-done-outline"></ion-icon>
+              Marcar
+            </ion-button>
+          </ion-col>
+          <ion-col size="auto">
+            <ion-button shape="round" fill="outline" size="small" color="medium" (click)="$event.stopPropagation(); openGoalCalendar(goal)">
+              <ion-icon slot="start" name="calendar-outline"></ion-icon>
+              Calendario
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <!-- Vista simple -->
+  <ng-container *ngIf="viewMode === 'simple'">
+    <ion-list lines="none">
+      <ion-item *ngFor="let goal of goals" class="simple-goal-item">
+        <ion-label>
+          <div style="font-weight:600;font-size:1.05rem;">{{ goal.nombre }}</div>
+          <div style="font-size:0.93rem;color:#888;">{{ getGoalTotalDays(goal.id) }} días marcados</div>
+        </ion-label>
+        <ion-button fill="clear" color="success" size="small" (click)="$event.stopPropagation(); openCheckGoal(goal)">
+          <ion-icon slot="icon-only" name="checkmark-done-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+
+
+</ion-content>

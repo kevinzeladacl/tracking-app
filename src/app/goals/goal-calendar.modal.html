@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Días marcados en el calendario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label><strong>Meta:</strong> {{ goal?.nombre }}</ion-label>
+  </ion-item>
+  <ion-list>
+    <ion-item *ngFor="let check of checkins">
+      <ion-label>{{ check.checked_at | date:'yyyy-MM-dd' }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="!checkins.length" class="ion-text-center" style="margin-top:32px;">
+    <ion-label color="medium">Aún no has marcado días para esta meta.</ion-label>
+  </div>
+</ion-content>
