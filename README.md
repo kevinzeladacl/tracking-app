@@ -43,14 +43,42 @@ Tracking App es una aplicación móvil orientada al seguimiento y gestión de me
 
 ## Instalación y Ejecución
 
-1. Instalar dependencias:
+1. Instala las dependencias:
    ```bash
    npm install
    ```
-2. Ejecutar la app en modo desarrollo:
+2. Copia el archivo de ejemplo de entorno:
+   ```bash
+   cp src/environments/environment.example.ts src/environments/environment.ts
+   # Edita src/environments/environment.ts con tus datos reales
+   ```
+3. Ejecuta la app en modo desarrollo:
    ```bash
    ionic serve
    ```
+
+## Variables de Entorno
+
+El proyecto utiliza archivos de entorno para separar la configuración sensible del código fuente. Ejemplo de variables requeridas:
+
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'https://your-api-url.com',
+  supabaseUrl: 'https://your-supabase-url.supabase.co',
+  supabaseAnonKey: 'tu-clave-anon-de-supabase'
+};
+```
+
+- No subas tus archivos `environment.ts` reales a repositorios públicos.
+- Usa siempre `environment.example.ts` como plantilla para nuevos entornos.
+
+## Buenas Prácticas
+- Variables sensibles y claves públicas solo en archivos de entorno.
+- Usa `.gitignore` para excluir carpetas como `android/`, `ios/`, `node_modules/`, archivos de entorno reales y cualquier archivo generado.
+- Mantén el código organizado en módulos, servicios y páginas.
+- Escribe pruebas y utiliza linters para mantener la calidad del código.
+- Documenta nuevas funciones y servicios.
 
 ## Tecnologías Utilizadas
 - Ionic
